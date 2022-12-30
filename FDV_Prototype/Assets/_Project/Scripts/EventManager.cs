@@ -12,7 +12,14 @@ public class EventManager : MonoBehaviour
     [SerializeField] private TextMeshPro gateText;
 
     [Header("Settings")] 
+    [Tooltip("Score the player needs to meet in order to win the level.")]
     [SerializeField] private int winScore;
+
+    public delegate void GameOver();
+    public static event GameOver OnGameOver;
+    
+    public delegate void GameWon();
+    public static event GameWon OnGameWon;
     
     private int _currentScore = -1;
     private int _soulsLeftToWin;
@@ -68,12 +75,20 @@ public class EventManager : MonoBehaviour
         if (_currentScore >= winScore)
         {
             // Win
-            Debug.Log("Current values: " + _currentScore + " " + winScore);
+            if (OnGameWon != null)
+            {
+                OnGameWon();
+            }
+            Debug.Log("Game won");
         }
 
         if (_soulsExistingInScene.Length < _soulsLeftToWin)
         {
             // Game Over
+            if (OnGameOver != null)
+            {
+                OnGameOver();
+            }
             Debug.Log("Game Over");
         }
     }
