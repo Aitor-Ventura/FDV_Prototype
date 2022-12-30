@@ -8,6 +8,9 @@ using Vector3 = UnityEngine.Vector3;
 
 public class SoulBehaviour : MonoBehaviour
 {
+    public delegate void SoulSaved();
+    public static event SoulSaved OnSaveSoul;
+
     private Rigidbody2D _rigidbody;
 
     private void Start()
@@ -42,6 +45,10 @@ public class SoulBehaviour : MonoBehaviour
         transform.DOComplete();
         transform.DOScale(Vector3.zero, 0.20f).From(transform.localScale).OnComplete(() =>
         {
+            if (OnSaveSoul != null)
+            {
+                OnSaveSoul();
+            }
             Destroy(gameObject);
         });
     }
