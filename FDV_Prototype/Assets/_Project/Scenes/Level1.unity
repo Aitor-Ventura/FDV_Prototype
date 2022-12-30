@@ -334,6 +334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 127093405}
   - component: {fileID: 127093406}
+  - component: {fileID: 127093407}
   m_Layer: 0
   m_Name: CloudSpriteRenderer
   m_TagString: Untagged
@@ -408,6 +409,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &127093407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127093404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 269ccdabc63d56e49abea927357f5095, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: 21300000, guid: 9565f2b510e20424f86796abd98d222e, type: 3}
+  gameOver: {fileID: 21300000, guid: 78861be4b0cb6a142b918633f653161b, type: 3}
+  win: {fileID: 21300000, guid: f71224060205f6944b85eae71ec1cfd6, type: 3}
 --- !u!1 &161572013
 GameObject:
   m_ObjectHideFlags: 0
@@ -3392,7 +3408,6 @@ GameObject:
   - component: {fileID: 1925748037}
   - component: {fileID: 1925748036}
   - component: {fileID: 1925748039}
-  - component: {fileID: 1925748040}
   m_Layer: 0
   m_Name: Cloud
   m_TagString: Player
@@ -3485,21 +3500,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
   spriteRenderer: {fileID: 127093406}
---- !u!114 &1925748040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925748035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 269ccdabc63d56e49abea927357f5095, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idle: {fileID: 21300000, guid: 9565f2b510e20424f86796abd98d222e, type: 3}
-  gameOver: {fileID: 21300000, guid: 78861be4b0cb6a142b918633f653161b, type: 3}
-  win: {fileID: 21300000, guid: f71224060205f6944b85eae71ec1cfd6, type: 3}
 --- !u!1 &1974665407
 GameObject:
   m_ObjectHideFlags: 0
