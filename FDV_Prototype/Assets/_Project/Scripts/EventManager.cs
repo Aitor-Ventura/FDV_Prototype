@@ -26,6 +26,8 @@ public class EventManager : MonoBehaviour
 
     private SoulBehaviour[] _soulsExistingInScene;
 
+    private GameManager _gameManager;
+
     private void OnEnable()
     {
         SoulBehaviour.OnSaveSoul += IncreaseCurrentScore;
@@ -41,6 +43,7 @@ public class EventManager : MonoBehaviour
     private void Start()
     {
         _soulsExistingInScene = FindObjectsOfType<SoulBehaviour>();
+        _gameManager = GameManager.Instance.GetComponent<GameManager>();
         
         Invoke(nameof(IncreaseCurrentScore), 0f);
         Invoke(nameof(UpdateGateText), 0f);
@@ -78,8 +81,8 @@ public class EventManager : MonoBehaviour
             if (OnGameWon != null)
             {
                 OnGameWon();
-            }
-            Debug.Log("Game won");
+            } 
+            _gameManager.Invoke("LoadMainMenu", 0.3f);
         }
 
         if (_soulsExistingInScene.Length < _soulsLeftToWin)
@@ -89,7 +92,7 @@ public class EventManager : MonoBehaviour
             {
                 OnGameOver();
             }
-            Debug.Log("Game Over");
+            _gameManager.Invoke("LoadTutorial", 0.3f);
         }
     }
 }

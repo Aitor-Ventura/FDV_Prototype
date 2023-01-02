@@ -42,6 +42,9 @@ public class SoulBehaviour : MonoBehaviour
     
     private void SaveSoul()
     {
+        ParticleSystem particle = GetComponentInChildren<ParticleSystem>();
+        particle.transform.DOScale(Vector3.zero, 0.20f).From(transform.localScale);
+        
         transform.DOComplete();
         transform.DOScale(Vector3.zero, 0.20f).From(transform.localScale).OnComplete(() =>
         {
