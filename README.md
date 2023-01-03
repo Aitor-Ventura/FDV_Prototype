@@ -4,7 +4,7 @@ This prototype, called Delivery, consists of carrying the souls of fallen heroes
 
 If you want to see a gameplay video, watch it here: https://www.youtube.com/watch?v=vjoZtKMVdJE
 
-If you want to see the contents of this README in a video, watch it here:
+If you want to see the contents of this README in a video, watch it here: https://www.youtube.com/watch?v=5DSq32L1MNM
 
 ### Sprites
 
