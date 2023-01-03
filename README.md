@@ -10,6 +10,10 @@ If you want to see the contents of this README in a video, watch it here:
 
 The sprites used (background, cloud, surrounding clouds) were all created using Krita and then saving them as images.
 
+### Camera set-up
+
+Using cinemachine I made it so that the camera follows and looks at the player.
+
 ### Main Menu scene set-up
 
 #### Sky background
